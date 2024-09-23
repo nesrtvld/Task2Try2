@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Task2Try2</string>
+    <string name="btn_count_text">Count</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="enter_you_text_here">Enter you text here</string>
+    <string name="click_to_count">Click to count!</string>
+    <string name="enter_words_or_characters_here">Enter words or characters here</string>
+    <string-array name="counting_options">
+        <item>Chars</item>
+        <item>Words</item>
+
+    </string-array>
+</resources>
