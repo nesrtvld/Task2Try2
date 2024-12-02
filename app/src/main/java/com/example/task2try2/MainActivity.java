@@ -14,8 +14,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.task2try2.Package.TextCounter;
-
 public class MainActivity extends AppCompatActivity {
 
     EditText edUserInput;
@@ -46,32 +44,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnCountClick(View view) {
-        // Получаем текст из EditText
-        String userInput = this.edUserInput.getText().toString().trim();  // Убираем лишние пробелы
 
-        // Проверяем, пустая ли строка
+        String userInput = this.edUserInput.getText().toString().trim();
+
         if (userInput.isEmpty()) {
-            // Если строка пустая, показываем предупреждение
             Toast.makeText(this, "Please enter some text", Toast.LENGTH_SHORT).show();
-            return;  // Прерываем выполнение метода
-        }
+            return;}
 
-        // Инициализируем класс TextCounter
         TextCounter tc = new TextCounter();
 
-        // Проверяем, что выбрано в Spinner: символы или слова
         String selectedOption = this.spCountingOptions.getSelectedItem().toString();
 
         if (selectedOption.equals("Chars")) {
-            // Считаем количество символов
             int charCount = tc.getCharsCount(userInput);
             this.tvResult.setText(String.valueOf(charCount));
         } else if (selectedOption.equals("Words")) {
-            // Считаем количество слов
             int wordCount = tc.getWordsCount(userInput);
             this.tvResult.setText(String.valueOf(wordCount));
         } else {
-            // Если выбран неправильный режим, показываем предупреждение
             Toast.makeText(this, "Invalid Option", Toast.LENGTH_LONG).show();
         }
 
